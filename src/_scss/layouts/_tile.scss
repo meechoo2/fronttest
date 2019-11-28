@@ -1,0 +1,55 @@
+.l-tile {
+  @include dfm(medium);
+  margin-left: -$unit;
+  margin-right: -$unit;
+  margin-bottom: - $unit * 2;
+  display: flex;
+  flex-wrap: wrap;
+  .l-contentBox-profile & { 
+    margin-bottom: - $unit * 6;
+    @include bp(small) {
+        margin-bottom: - $unit * 8;
+      }
+  }
+}
+.l-tile {
+  $_root: &;
+  &_item {
+    width: 100%;
+    padding-left: $unit;
+    padding-right: $unit;
+    margin-bottom: $unit * 2;
+    .l-contentBox-profile & {
+      margin-bottom: $unit * 6;
+      @include bp(small) {
+        margin-bottom: $unit * 8;
+      }
+    }
+    #{$_root} & {
+      @include bp(small) {
+        width: 100%;
+      }
+    }
+  }
+  @for $col from 1 through 10 {
+    &-#{$col}col {
+      #{$_root}_item {
+        width: 100% / $col;
+      }
+      &-md {
+        #{$_root}_item {
+          @include bp(medium) {
+            width: 100% / $col;
+          }
+        }
+      }
+      &-sm {
+        #{$_root}_item {
+          @include bp(small) {
+            width: 100% / $col;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,162 @@
+/*============*\
+  ヘッダー
+  * ナビゲーション
+  * 企業ロゴ
+\*============*/
+.g-siteHeader {
+  display: flex;
+  align-items: center;
+  padding-top: 2.7%;
+  padding-left: 5.5%;
+  padding-right: 5.5%;
+  max-width: 1300px;
+  margin: 0 auto;  
+  @include bp(small) {
+    display: block;
+    position: relative;
+    padding-top: $unit * 4;
+  }
+  &_menu {
+    width: 100%;
+    padding-right: 10%;
+    @include bp(small) {
+      padding-left: 12%;
+      display: none;
+    }
+    &.js-hamburger-active {
+      @include bp(small) {
+        display: block;
+      }
+    }
+  }
+  &_logo {
+    width: 7%;
+    @include bp(small) {
+      position: absolute;
+      left: 5.5%;
+      width: auto;
+    }
+    a {
+      display: block;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.g-siteHeaderNav {
+  &_list {
+    display: flex;
+    margin-left: auto;
+    justify-content: flex-end;
+    margin-left: -20px;
+    margin-right: -20px;
+    @include bp(small) {
+      display: block;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  &_listItem {
+    padding-right: 20px;
+    padding-left: 20px;
+    @include bp(small) {
+      margin-top: $unit * 6;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.g-siteHeaderNavItem {
+  &_link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    letter-spacing: .061em;
+    @include bp(small) {
+      font-size: 3.5rem;
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      background: map-get($c-project,black);
+      height: 1px;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      transition: transform 0.3s;
+      opacity: 0;
+      transform: scale(0, 1);
+      @include bp(small) {
+        display: none;
+      }
+    }
+    &:hover {
+      &:after {
+        width: 100%;
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+    }
+  }
+}
+
+.g-siteHeaderSwitch {
+  display: none;
+  @include bp(small) {
+    display: block;
+    position: absolute;
+    right: 5.5%;
+  }
+  &_link {
+    position: relative;
+    &Item {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.g-siteHeader_linkOpen {
+  opacity: 1;
+  transform: rotate(0);
+  transition: all .3s ease-in-out;
+}
+.g-siteHeader_linkClose {
+  transition: all .3s ease-in-out;
+  transform: rotate(-90deg);
+  opacity: 0;
+}
+
+.js-header-fixed {
+  @include bp(small) {
+    .g-siteHeader_logo {
+      opacity: 0;
+    }
+    .g-siteHeader_linkOpen {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+    .g-siteHeader_linkClose {
+      transform: rotate(0);
+      opacity: 1;
+    }
+    @include bp(small) {
+      overflow: hidden;
+      height: 100%;
+    }
+    .g-siteHeader {
+      height: 100vh;
+    }
+  }
+}

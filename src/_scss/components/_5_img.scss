@@ -1,0 +1,58 @@
+.c-img {
+  img {
+    width: 100%;
+    vertical-align: bottom;
+  }
+}
+
+.p-graphEntry {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  &_item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    $_root: &;
+    &-1 {
+      width: 100%;
+      animation: service_tcs_graph_1 70s infinite linear;
+    }
+    &-2,
+    &-3 {
+      top: 50%;
+      left: 50%;
+      width: 51%;
+      margin: -25.5% 0 0 -25%;
+      animation: service_tcs_graph_rotate 60s linear infinite;
+      img {
+        animation: service_tcs_graph_rotate 60s linear reverse infinite;
+      }
+    }
+    &-2 {
+      margin-left: -46.6%;
+      transform-origin: 91.5% center;
+    }
+    &-3 {
+      margin-left: -4%;
+      transform-origin: 8% center;
+    }
+  }
+}
+@keyframes service_tcs_graph_1 {
+    0% {
+      transform:rotate(0deg);
+    }
+    100% {
+      transform:rotate(360deg);
+    }
+}
+
+@keyframes service_tcs_graph_rotate {
+    0% { 
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}

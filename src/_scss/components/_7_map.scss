@@ -1,0 +1,15 @@
+.c-map {
+  margin-top: $unit * 13;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: (600 / 800) * 100%;
+  overflow: hidden;
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}

@@ -1,0 +1,14 @@
+.c-card {
+  &_inner {
+    padding: $unit * 1.5;
+  }
+  &_img {
+    img {
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+  &_data {
+    margin-top: $unit * 2;
+  }
+}

@@ -1,0 +1,17 @@
+.c-headingLv1 {
+  @include ex($tf-h1);
+}
+
+.c-headingLv2 {
+  @include ex($tf-h2);
+  @include bp(small) {
+    font-size: 5.6rem;
+  }
+}
+
+.c-headingLv3 {
+  @include ex($tf-h3);
+  @include bp(small) {
+    font-size: 3rem;
+  }
+}

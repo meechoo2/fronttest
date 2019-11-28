@@ -1,0 +1,30 @@
+.c-list {
+  $_root: &;
+  &-flex {
+    display: flex;
+    flex-wrap: wrap;
+    #{$_root}_item {
+      padding-left: $unit;
+      padding-right: $unit;
+    }
+    &ContentCenter {
+      justify-content: center;
+    }
+  }
+  &_item {
+    margin-top: $unit * 2;
+  }
+}
+
+.c-description {
+  &_term {
+    margin-top: $unit * 4;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &_desc {
+    margin-top: $unit * 2;
+    line-height: 2.23em;
+  }
+}

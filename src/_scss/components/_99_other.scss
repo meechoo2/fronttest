@@ -1,0 +1,27 @@
+.c-hr {
+  border-top: 1px solid #000;
+  width: 16px;
+  &-large {
+    margin-top: $unit * 10;
+    @include bp(small) {
+      margin-top: $unit * 5;
+    }
+  }
+}
+
+.js-fade-in {
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  transform: translateY(15px);
+  &-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// .js-filter-show-item {
+//   display: none;
+//   &.js-filter-active {
+//     display: block;
+//   }
+// }

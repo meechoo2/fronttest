@@ -1,0 +1,222 @@
+/* ======================================== *\
+# Stylesheet Foundation - CONNECT DESIGN KIT
+\* ======================================== */
+
+/* -------------------- *\
+## 画面フォーマット
+\* -------------------- */
+
+/*
+### ブレークポイント
+*/
+// bp = BreakPoint
+$bp-xlarge: 1440px;
+$bp-large: 960px;
+$bp-medium: 750px;
+$bp-small: $bp-medium - 1;
+
+/*
+### 画面幅
+*/
+
+/*
+### コンテンツ最大幅
+*/
+// ct = ConTents
+$ct-maxW: 1252px;
+
+/*
+### 左右余白
+*/
+// ct = ConTents
+$ct-padding: 24px;
+
+/*
+### グリッド
+*/
+// gr = GRid
+$gr-cols: 14;
+$gr-gutter: 32px;
+
+/* -------------------- *\
+## デザイン要素
+\* -------------------- */
+
+/*
+### 基準値
+*/
+$unit: 8px;
+
+/*
+### スペース
+基準値をもとに8px単位で増減 (最小値を2px、4〜32px間は4px単位で増減)。
+使用頻度の高いスペースにsmall/medium/largeを割り当てます。
+*/
+// sp = SPace
+$sp-small: $unit * 1;
+$sp-medium: $unit * 3;
+$sp-large: $unit * 9;
+
+/*
+### 行高さ
+*/
+// lh = LineHeight
+$lh-small: 1.4;
+$lh-medium: 1.4;
+$lh-large: 1.4;
+
+/*
+### 色
+色の呼び出しは `map-get($c-***,{key})`
+*/
+// c = Color
+// #### 表現色
+$c-project: (
+  black: #231815
+);
+// #### 基本の文字色
+$text: #231815;
+// #### リンク色
+$c-link: (
+  normal: #231815,
+  visited: #231815,
+  hover: #231815
+);
+
+/*
+### 線
+使用する線のスタイルを以下とします。
+*/
+// bd = BorDer
+$bd-bold: 2px solid #000000;
+$bd-medium: 1px solid #000009;
+$bd-regular: 1px solid #bdbdbd;
+$bd-light: 1px solid #e0e0e0;
+$bd-thin: 1px solid #eeeeee;
+
+/* -------------------- *\
+## 書式
+\* -------------------- */
+
+/*
+### ルート
+ルートのCSS設定を以下とします。
+*/
+/* ヒラギノ角ゴ */
+@font-face {
+  font-family: '-Hiragino';
+  font-weight: normal;
+  src: local('HiraginoSans-W3'), local('Hiragino Kaku Gothic ProN');
+}
+@font-face {
+  font-family: '-Hiragino';
+  font-weight: bold;
+  src: local('HiraginoSans-W6'), local('Hiragino Kaku Gothic ProN W6');
+}
+/* 游ゴシック */
+@font-face {
+  font-family: '-YuGothic';
+  font-weight: normal;
+  src: local('YuGothic-Medium'), local('Yu Gothic Medium'), local('YuGothic'); 
+}
+@font-face {
+  font-family: '-YuGothic';
+  font-weight: bold;
+  src: local('YuGothic-Bold'), local('Yu Gothic'), local('YuGothic');
+}
+
+html { 
+  font-family: "a-otf-gothic-bbb-pr6n","Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic",Geneva,Arial,Verdana,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 13px;
+  font-size: 1.2vw;
+  line-height: 2.23em;
+  color: #231815;
+  background-color: #ffffff;
+ }
+
+/*
+### リンクスタイル
+*/
+// lt = Link Text
+// スタイルの展開は `@include ex($lt-**);`
+// 標準
+$lt-link:(
+  color: map-get($c-link,normal),
+  text-decoration: none
+);
+// 訪問済
+$lt-visited:(
+  color: map-get($c-link,visited),
+  text-decoration: none
+);
+// マウスオン
+$lt-hover:(
+  color: map-get($c-link,hover),
+  text-decoration: underline
+);
+// lp = Link Paragraph
+// スタイルの呼び出しは `@include ex($lt-**);`
+// 標準
+$lp-link:(
+  color: map-get($c-link,normal),
+  text-decoration: none
+);
+// 訪問済
+$lp-visited:(
+  color: map-get($c-link,visited),
+  text-decoration: none
+);
+// マウスオン
+$lp-hover:(
+  color: map-get($c-link,hover),
+  text-decoration: underline
+);
+
+/*
+### パターン
+書式のパターンを以下とします。指定値は「書体 ウェート 文字サイズ/行高さ (計算後の行高さ) 字間」の順番で記述します。
+「文字サイズ/行高さ」を除いてルートを引き継ぐ値は省略可。計算後の行高さは小数点以下切り捨て。
+※上記はサンプル。案件にあわせて段階や値を変更してください。
+*/
+// tf = Text Format
+// パターンの展開は `@include ex($tf-**);`
+$tf-h1:(
+  font-weight: bold,
+  font-size: 37px,
+  color: #231815,
+  line-height: 1.2
+);
+$tf-h2:(
+  font-weight: 700,
+  font-size: 1.8rem,
+  color: #231815,
+  line-height: 1.8
+);
+$tf-h3:(
+  font-weight: 700,
+  font-size: 1.2rem,
+  color: #231815
+);
+$tf-catch:(
+  font-weight: bold,
+  font-size: 1rem,
+);
+$tf-lead:(
+  font-size: 1rem,
+  line-height: 1.8
+);
+$tf-title:(
+  font-weight: bold,
+  font-size: 1rem,
+  line-height: 1.8
+);
+$tf-body:(
+  font-size: 1rem,
+  line-height: 1.8
+);
+$tf-sub:(
+  font-size: 1rem,
+  line-height: 1.8
+);

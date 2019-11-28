@@ -1,0 +1,19 @@
+/* ======================================== *\
+# extend
+extend用のスタイルを定義
+\* ======================================== */
+%clearfix {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
+%inner {
+  max-width: $ct-maxW + ($ct-padding * 2);
+  padding-left: 5.5%;
+  padding-right: 5.5%;
+  margin-left: auto;
+  margin-right: auto;
+}

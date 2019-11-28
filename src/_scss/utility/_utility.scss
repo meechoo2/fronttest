@@ -1,0 +1,109 @@
+.u-display {
+  &-block {
+    display: block;
+  }
+  &-inlineBlock {
+    display: inline-block;
+  }
+  &-inline {
+    display: inline;
+  }
+  &-none {
+    display: none;
+  }
+  &-lgBlock {
+    @include bp(large) {
+      display: block;
+    }
+  }
+  &-lgInlineBlock {
+    @include bp(large) {
+      display: inline-block;
+    }
+  }
+  &-lgInline {
+    @include bp(large) {
+      display: inline;
+    }
+  }
+  &-lgNone {
+    @include bp(large) {
+      display: none;
+    }
+  }
+  &-overLgNone {
+    @include bp(over-large) {
+      display: none;
+    }
+  }
+  &-overLgBlock {
+    @include bp(over-large) {
+      display: block;
+    }
+  }
+  &-mdBlock {
+    @include bp(medium) {
+      display: block;
+    }
+  }
+  &-mdInlineBlock {
+    @include bp(medium) {
+      display: inline-block;
+    }
+  }
+  &-mdInline {
+    @include bp(medium) {
+      display: inline;
+    }
+  }
+  &-mdNone {
+    @include bp(medium) {
+      display: none;
+    }
+  }
+  &-overMdNone {
+    @include bp(over-medium) {
+      display: none;
+    }
+  }
+  &-smBlock {
+    @include bp(small) {
+      display: block;
+    }
+  }
+  &-smInlineBlock {
+    @include bp(small) {
+      display: inline-block;
+    }
+  }
+  &-smInline {
+    @include bp(small) {
+      display: inline;
+    }
+  }
+  &-smNone {
+    @include bp(small) {
+      display: none;
+    }
+  }
+  &-xsmBlock {
+    @include bp(374px) {
+      display: block;
+    }
+  }
+  &-xsmInlineBlock {
+    @include bp(374px) {
+      display: inline-block;
+    }
+  }
+  &-xsmInline {
+    @include bp(374px) {
+      display: inline;
+    }
+  }
+  &-xsmNone {
+    @include bp(374px) {
+      display: none;
+    }
+  }
+}
